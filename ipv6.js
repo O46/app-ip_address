@@ -1,14 +1,16 @@
+/**
+ * Calculates an IPv4-mapped IPv6 address.
+ * @param {string} ipv4 - An IPv4 address in dotted-quad format.
+ * @return {*} (ipv6Address) - An IPv6 address string or null if a run-time problem was detected.
+ */
 function getIpv4MappedIpv6Address(ipv4) {
-
   // Initialize return argument
   let ipv6Address = null;
-
   // Prepare to derive a Hex version of the dotted-quad decimal IPv4 address.
   // Split the IPv4 address into its four parts.
   let ipv4Quads = ipv4.split('.');
   // Count the number of parts found.
   let numIpv4Segments = ipv4Quads.length;
-
   // Verify IPv4 had four parts.
   if (numIpv4Segments === 4) {
     let validQuads = true;
@@ -41,5 +43,4 @@ function getIpv4MappedIpv6Address(ipv4) {
   }
   return ipv6Address;
 }
-
 module.exports.getIpv4MappedIpv6Address = getIpv4MappedIpv6Address;
